@@ -1,0 +1,36 @@
+<h1>Profile</h1>
+
+{{#if orders}}
+<h1 class="text-center" style="color: darkblue;">My orders</h1>
+{{#each orders}}
+
+{{#each this.items}}
+
+{{#each this}}
+<div class="row  mx-auto col-md-6 ">
+  {{#each this}}
+  <div class="col-md-12 mx-auto ">
+    <div class="text-white bg-dark rounded-3" style="font-size: x-large;">
+      {{this.title}}
+      <div class="float-right mx-4">
+        {{this.price}}
+      </div>
+    </div>
+  </div>
+
+
+
+  {{/each}}
+</div>
+
+{{/each}}
+
+{{/each}}
+<span class="mx-5 text-center  ">
+  <h3 class="mx-4 mt-0"> Order Total Price:
+</span> <span class="badge bg-secondary"> {{this.cart.totalPrice}}</span></h3>
+
+{{/each}}
+{{else}}
+<h1 class="text-center" style="color:darkblue;">You Have No Orders</h1>
+{{/if}}

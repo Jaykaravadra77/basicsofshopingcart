@@ -1,0 +1,32 @@
+{
+  "name": "completeshoping-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon scart/app.js -e .html,.hbs,.css,.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.4.1",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "dotenv": "^10.0.0",
+    "ember-composable-helpers": "^4.5.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "font-awesome": "^4.7.0",
+    "hbs": "^4.1.2",
+    "mongoose": "^5.13.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "stripe": "^8.170.0",
+    "validator": "^13.6.0"
+  }
+}

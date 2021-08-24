@@ -1,0 +1,40 @@
+<div class="row " style="min-height: 70vh;">
+
+
+
+
+    <div class="col-md-4   my-auto mx-auto  ">
+        <div class="row  ">
+            <h1 class="text-center">Singn In</h1>
+        </div>
+        {{#if msg}}
+        <div class="row justify-content-center  mr-2 ml-2">
+
+            <div class="alert alert-danger col-md-12" role="alert">
+               {{msg}}
+            </div>
+
+        </div>
+        {{/if}}
+
+        <form action="/user/signin" method="POST" class="mt-2">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+
+                <input type="text" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <div><button type="submit" class="btn btn-primary  ">signin</button></div>
+            <p>Dont have acount? <a href="/user/signup">Create a new account</p>
+        </form>
+
+    </div>
+</div>

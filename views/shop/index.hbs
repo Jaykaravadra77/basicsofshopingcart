@@ -1,0 +1,74 @@
+
+<style>
+  .carousel-inner img {
+    width: 100%;
+    height: 30%;
+  }
+  </style>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner" style=" border: 0px solid;padding: 10px;box-shadow: 5px 10px 18px rgb(218, 213, 213);"  >
+                    <div class="carousel-item active">
+                        <img src="/images/1.jpg" class="img-responsive" alt="Los Angeles"  style="height: 500px;" >
+                        <div class="carousel-caption">
+                            <h3><b>Stylish Jeans </b>  </h3>
+                            <p>We had such a great time in LA!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/2.jpg" class="img-responsive"  alt="Chicago" style="height: 500px;"  >
+                        <div class="carousel-caption">
+                            <h3>Laptos</h3>
+                            <p> Laptops's accessories </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/3.jpg" class="img-responsive"  alt="New York" style="height: 500px;"  >
+                        <div class="carousel-caption">
+                            <h3>Kitchen </h3>
+                            <p>All kitchen accessories available</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev" >
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {{#each finalResult}}
+
+    <div class="row mt-5 ">
+        {{#each this}}
+
+        <div class="col-md-3">
+            <div class="card   " style="max-height: 450px;">
+                <img class="card-img-top imp-fluid" style="height: 200px;" src="{{this.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"> {{this.title}}</h5>
+                    <p class="card-text">
+                        {{this.description}}</p>
+                    <div class="float-left">{{this.price}}</div>
+                    <div class="float-right"> <a href="add-to-cart/{{this._id}}" class="btn btn-success">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+    {{/each}}
+
+</div>

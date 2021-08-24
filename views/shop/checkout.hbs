@@ -1,0 +1,67 @@
+{{!--
+<script src="https://checkout.stripe.com/checkout.js" defer></script>
+<script>
+
+</script>
+<script src="store.js" defer></script>
+
+--}}
+
+
+<script>
+  var csrf = "{{csrf}}";
+  var user = "{{user._id}}";
+
+
+</script>
+
+
+<head>
+  <meta charset="utf-8" />
+  <title>Accept a card payment</title>
+  <meta name="description" content="A demo of a card payment on Stripe" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="css/global.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+  <script src="js/client.js"></script>
+</head>
+
+
+
+<!-- Display a payment form -->
+<div class="row justify-content-center " style="margin-top: 70px;">
+   
+  <form class="forms mt-5" id="payment-form">
+    <div class="row justify-content-center">
+     <h1>PAY {{tprice}}</h1>
+     </div>
+    <input type="hidden" required name="_csrf" value="{{csrf}}">
+
+    <input type="text" id="name" required Placeholder="Name of Acount holder" />
+
+     <input type="number" max="10000000000" id="contact" required Placeholder="Valid Mobile No" />
+
+    <div class="form-group">
+      <textarea class="form-control" required id="address"  placeholder="Address should be contain State City and Pincode&#13;&#10;Invalid Address cause order cancallation" rows="3"></textarea>
+    </div>
+
+    <div id="card-element">
+      <!--Stripe.js injects the Card Element-->
+    </div>
+
+    <button id="submit">
+      <div class="spinner hidden" id="spinner"></div>
+      <span id="button-text">Pay now</span>
+    </button>
+
+    <p id="card-error" role="alert"></p>
+
+    <p class="result-message hidden">
+      Payment succeeded, see the result in your
+      <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+    </p>
+  </form>
+
+</div>

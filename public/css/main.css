@@ -1,0 +1,17 @@
+.row{
+    display: flex;
+    
+     
+
+}
+.col-md-3 {
+    margin-right: 0px;
+}
+
+.container-fluid
+{
+    padding: 0px 50px 50px 50px ;
+}
+.cardc{
+    padding: 0px 50px 50px 50px ;
+}
